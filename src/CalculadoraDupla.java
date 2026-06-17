@@ -55,6 +55,11 @@ public class CalculadoraDupla extends javax.swing.JFrame {
         });
 
         btnMultiplicacao.setText("*");
+        btnMultiplicacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMultiplicacaoActionPerformed(evt);
+            }
+        });
 
         btnDivisao.setText("/");
 
@@ -152,6 +157,15 @@ public class CalculadoraDupla extends javax.swing.JFrame {
         
         txtResultado.setText(Integer.toString(resultado));      
     }//GEN-LAST:event_btnSomaActionPerformed
+
+    private void btnMultiplicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicacaoActionPerformed
+        int valor1 = Integer.valueOf(txtValor1.getText());
+        int valor2 = Integer.valueOf(txtValor2.getText());
+        
+        int resultado = valor1*valor2;
+        
+        txtResultado.setText(Integer.toString(resultado));
+    }//GEN-LAST:event_btnMultiplicacaoActionPerformed
 
     /**
      * @param args the command line arguments
