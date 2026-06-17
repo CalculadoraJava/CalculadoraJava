@@ -25,31 +25,119 @@ public class CalculadoraDupla extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblCalculadora = new javax.swing.JLabel();
+        lblValor1 = new javax.swing.JLabel();
+        lblValor2 = new javax.swing.JLabel();
+        txtValor1 = new javax.swing.JTextField();
+        txtValor2 = new javax.swing.JTextField();
+        lblResultado = new javax.swing.JLabel();
+        btnSubtracao = new javax.swing.JButton();
+        btnMultiplicacao = new javax.swing.JButton();
+        btnDivisao = new javax.swing.JButton();
+        btnSoma = new javax.swing.JButton();
+        txtResultado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        lblCalculadora.setText("Calculadora Dupla");
+
+        lblValor1.setText("Número 1");
+
+        lblValor2.setText("Número 2");
+
+        lblResultado.setText("Resultado");
+
+        btnSubtracao.setText("-");
+        btnSubtracao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubtracaoActionPerformed(evt);
+            }
+        });
+
+        btnMultiplicacao.setText("*");
+
+        btnDivisao.setText("/");
+
+        btnSoma.setText("+");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(285, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(78, 78, 78))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(lblValor1)
+                        .addGap(85, 85, 85)
+                        .addComponent(lblValor2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(lblCalculadora)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblResultado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtResultado))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtValor1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtValor2, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)))
+                .addGap(48, 48, 48))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnDivisao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSoma))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSubtracao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnMultiplicacao)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel1)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addGap(21, 21, 21)
+                .addComponent(lblCalculadora)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblValor1)
+                    .addComponent(lblValor2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtValor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtValor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSubtracao)
+                    .addComponent(btnMultiplicacao))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDivisao)
+                    .addComponent(btnSoma))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblResultado)
+                    .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(59, 59, 59))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSubtracaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtracaoActionPerformed
+        int valor1 = Integer.valueOf(txtValor1.getText());
+       int valor2 = Integer.valueOf(txtValor2.getText());
+       
+       int resultado = valor1-valor2;
+       txtResultado.setText(Integer.toString(resultado)); 
+    }//GEN-LAST:event_btnSubtracaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,6 +175,16 @@ public class CalculadoraDupla extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnDivisao;
+    private javax.swing.JButton btnMultiplicacao;
+    private javax.swing.JButton btnSoma;
+    private javax.swing.JButton btnSubtracao;
+    private javax.swing.JLabel lblCalculadora;
+    private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblValor1;
+    private javax.swing.JLabel lblValor2;
+    private javax.swing.JTextField txtResultado;
+    private javax.swing.JTextField txtValor1;
+    private javax.swing.JTextField txtValor2;
     // End of variables declaration//GEN-END:variables
 }
