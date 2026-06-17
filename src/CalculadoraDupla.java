@@ -59,6 +59,11 @@ public class CalculadoraDupla extends javax.swing.JFrame {
         btnDivisao.setText("/");
 
         btnSoma.setText("+");
+        btnSoma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSomaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,6 +143,15 @@ public class CalculadoraDupla extends javax.swing.JFrame {
        int resultado = valor1-valor2;
        txtResultado.setText(Integer.toString(resultado)); 
     }//GEN-LAST:event_btnSubtracaoActionPerformed
+
+    private void btnSomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSomaActionPerformed
+        int valor1 = Integer.valueOf(txtValor1.getText());
+        int valor2 = Integer.valueOf(txtValor2.getText());
+        
+        int resultado = valor1+valor2;
+        
+        txtResultado.setText(Integer.toString(resultado));      
+    }//GEN-LAST:event_btnSomaActionPerformed
 
     /**
      * @param args the command line arguments
